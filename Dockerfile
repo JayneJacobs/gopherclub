@@ -16,7 +16,7 @@ RUN go get -u github.com/gopherjs/websocket
 RUN go get -u go.isomorphicgo.org/go/isokit 
 # RUN go get -u github.com/JayneJacobs/gopherclub/tdewolff/minify@v2.3.4
 RUN go get -u github.com/JayneJacobs/gopherclub
-RUN go get -u go.go.org/uxtoolkit/cog
+# RUN go get -u go.org/uxtoolkit/cog
 #RUN go get -u github.com/JayneJacobs/gopherclub/vendor/tdewolff/parse@v2.3.6
 
 
