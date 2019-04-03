@@ -2,9 +2,9 @@ FROM golang:1.11.5-alpine3.9
 MAINTAINER Jayne Jacobs jaynejacobs@jaynejacobs.com
 
 # Declare required environment variables
-ENV gopherclub_APP_ROOT=/go/src/github.com/JayneJacobs/gopherclub
-ENV gopherclub_HASH_KEY="CRKVBJs0kfyeQ9Y1"
-ENV gopherclub_BLOCK_KEY="9LtmRLzVH27CwxrO"
+ENV GOPHERCLUB_APP_ROOT=/go/src/github.com/JayneJacobs/gopherclub
+ENV GOPHERCLUB_HASH_KEY="CRKVBJs0kfyeQ9Y1"
+ENV GOPHERCLUB_BLOCK_KEY="9LtmRLzVH27CwxrO"
 ENV GOPATH=/go
 
 # Get the required Go packages
