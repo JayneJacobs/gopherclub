@@ -7,7 +7,7 @@ services:
     volumes:
        - ./config/gfdbdump.sql:/docker-entrypoint-initdb.d/gfdbdump.sql
     environment:
-        MYSQL_ROOT_PASSWORD: rootpass
+        MYSQL_ROOT_PASSWORD: gopherface
         MYSQL_USER: gopherclub
         MYSQL_PASSWORD: gopherclub
         MYSQL_DATABASE: gopherclubdb
