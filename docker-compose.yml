@@ -1,0 +1,34 @@
+version: '2'
+services:
+  database:
+    image: mysql 
+    ports:
+       - "3306:3306"
+    volumes:
+       - ./config/gfdbdump.sql:/docker-entrypoint-initdb.d/gfdbdump.sql
+    environment:
+        MYSQL_ROOT_PASSWORD: rootpass
+        MYSQL_USER: gopherclub
+        MYSQL_PASSWORD: gopherclub
+        MYSQL_DATABASE: gopherclubdb
+  webapp:
+    depends_on:
+        - database 
+    build: .
+    ports:
+        - "8080:8080"
+    links:
+        - database:mysql
+  reverseproxy:
+    depends_on:
+        - webapp
+    image: "nginx"
+    volumes:
+        - ./config/nginx.conf:/etc/nginx/nginx.conf
+        # You should change the host mount paths for the following two entries to the appropriate location of 
+        # your Let's Encrypt key files
+        - /etc/letsencrypt/live/gopherclub.jaynejacobs.com/fullchain.pem:/etc/nginx/certs/gopherclubcert.pem
+        - /etc/letsencrypt/live/gopherclub.jaynejacobs.com/privkey.pem:/etc/nginx/certs/gopherclubkey.pem
+    ports:
+        - "80:80"
+        - "443:443"

@@ -1,0 +1,13 @@
+[Unit]
+Description=gopherclub
+[Service]
+USER=gopherclub
+GROUP=gopherclub
+Environment=gopherclub_APP_ROOT=/home/gopherclub/gopherclub
+Environment=gopherclub_HASH_KEY=CRKVBJs0kfyeQ9Y1
+Environment=gopherclub_BLOCK_KEY=9LtmRLzVH27CwxrO
+WorkingDirectory=/home/gopherclub/gopherclub
+ExecStart=/home/gopherclub/gopherclub/gopherclub
+Restart=always
+[Install]
+WantedBy=multi-user.target
