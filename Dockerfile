@@ -1,4 +1,4 @@
-FROM golang
+FROM golang:1.12.1-stretch
 MAINTAINER Jayne Jacobs jaynejacobs@jaynejacobs.com
 
 # Declare required environment variables
