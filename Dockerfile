@@ -1,4 +1,4 @@
-FROM golang:1.11.5-alpine3.9
+FROM golang
 MAINTAINER Jayne Jacobs jaynejacobs@jaynejacobs.com
 
 # Declare required environment variables
