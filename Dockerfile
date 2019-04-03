@@ -17,11 +17,11 @@ RUN go get -u go.isomorphicgo.org/go/isokit
 RUN go get -u github.com/JayneJacobs/gopherclub/tdewolff/minify@v2.3.4
 RUN go get -u github.com/JayneJacobs/gopherclub
 RUN go get -u go.go.org/uxtoolkit/cog
-RUN go get  github.com/JayneJacobs/gopherclub/vendor/tdewolff/parse@v2.3.6
+RUN go get -u github.com/JayneJacobs/gopherclub/vendor/tdewolff/parse@v2.3.6
 
 
 # Transpile and install the client-side application code
-RUN cd $gopherclub_APP_ROOT/client; go get ./..; /go/bin/gopherjs build -m --verbose -o $gopherclub_APP_ROOT/static/js/client.min.js
+RUN cd $GOPHERCLUB_APP_ROOT/client; go get ./..; /go/bin/gopherjs build -m --verbose -o $GOPHERCLUB_APP_ROOT/static/js/client.min.js
 
 # Build and install the server-side application code
 RUN go install github.com/JayneJacobs/gopherclub
@@ -29,6 +29,6 @@ RUN go install github.com/JayneJacobs/gopherclub
 # Specify the entrypoint
 ENTRYPOINT /go/bin/gopherclub
 
-# Expose port 8080 of the container
+# Expose port 8081 of the container
 EXPOSE 8081
 
