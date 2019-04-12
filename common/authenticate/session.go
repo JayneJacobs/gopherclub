@@ -51,5 +51,5 @@ func init() {
 	if _, err := os.Stat("/tmp/gopherclub-sessions"); os.IsNotExist(err) {
 		os.Mkdir("/tmp/gopherclub-sessions", 711)
 	}
-	SessionStore = sessions.NewFilesystemStore("/tmp/gopherclub-sessions", []byte(os.Getenv("gopherclub_HASH_KEY")))
+	SessionStore = sessions.NewFilesystemStore("/tmp/gopherclub-sessions", []byte(os.Getenv("GOPHERCLUB_HASH_KEY")))
 }

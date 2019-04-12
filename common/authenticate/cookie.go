@@ -70,8 +70,8 @@ func ExpireSecureCookie(w http.ResponseWriter, r *http.Request) {
 
 func init() {
 
-	hashKey = []byte(os.Getenv("gopherclub_HASH_KEY"))
-	blockKey = []byte(os.Getenv("gopherclub_BLOCK_KEY"))
+	hashKey = []byte(os.Getenv("GOPHERCLUB_HASH_KEY"))
+	blockKey = []byte(os.Getenv("GOPHERCLUB_BLOCK_KEY"))
 
 	s = securecookie.New(hashKey, blockKey)
 }

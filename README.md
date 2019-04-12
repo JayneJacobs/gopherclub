@@ -106,8 +106,8 @@ Let's Encrypt Automated Certificate Management
 
    ```sh
      65  cd /etc/letsencrypt/live/
-   77  ls /etc/letsencrypt/live/gopherface.jaynejacobs.com/
-   80  ls /etc/letsencrypt/live/gopherface.jaynejacobs.com/
+   77  ls /etc/letsencrypt/live/gopherclub.jaynejacobs.com/
+   80  ls /etc/letsencrypt/live/gopherclub.jaynejacobs.com/
    92  cd /opt/letsencrypt
     ./letsencrypt-auto certonly --standalone -d gopherclub.jaynejacobs.com
     ```
@@ -115,10 +115,13 @@ Performs domain name validation
 
 ## To build the binary for Linux
 ```sh
+rm -f $GOPHERCLUB_APP_ROOT/builds/gopherclub-linux64
 go build -o $GOPHERCLUB_APP_ROOT/builds/gopherclub-linux64
 
 file builds/gopherclub-linux64
 builds/gopherclub-linux64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, not stripped
+
+whereis apache2. apache2: /etc/apache2
 ```
 
 #Building Binarys for other os's

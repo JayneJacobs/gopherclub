@@ -20,11 +20,11 @@ systemctl enable mysql.service
 
 DDL statements 	Database Definition Language
 
-Create user	CREATE USER 'username'@'%' IDENTIFIED BY 'password';
-Create user	CREATE USER 'gopherclub'@'%' IDENTIFIED BY 'gopherclub';
-Create DB (backtics, not single quotes)	CREATE DATABASE IF NOT  EXISTS `gopherclubdb` DEFAULT CHARACTER SET 'utf8' COLLATE `utf8_unicode_ci`;
-GRANT PRIVILEGES	GRANT All PRIVILEGES ON gopherclubdb.* TO 'password'@'%';
-FLUSH PRIVILEBES SO CHANGES TAKE AFFECT	FLUSH PRIVILEGES;
+Create user:	CREATE USER 'username'@'%' IDENTIFIED BY 'password';
+CREATE USER 'gopherclub'@'%' IDENTIFIED BY 'gopherclub';
+Create DB: (backtics, not single quotes)	CREATE DATABASE IF NOT  EXISTS `gopherclubdb` DEFAULT CHARACTER SET 'utf8' COLLATE `utf8_unicode_ci`;
+GRANT All PRIVILEGES ON gopherclubdb.* TO 'gopherclub'@'%';
+FLUSH PRIVILEBES SO CHANGES TAKE AFFECT: 	FLUSH PRIVILEGES;
 
 scp gfdbdump.sql gopherclub@gopherclub.jaynejacobs.com:~/.
 mysql -u gopherclub -p gopherclubdb < /home/gopherclub/gfdbdump.sql 
@@ -43,5 +43,7 @@ mysql> show tables;
 | user                   |
 | user_profile           |
 +------------------------+
+
+ select * from user;
 ```
 

@@ -21,7 +21,7 @@ import (
 
 const (
 	//	WEBSERVERPORT = ":8443"
-	WEBSERVERPORT = ":8081"
+	WEBSERVERPORT = ":8080"
 )
 
 var WebAppRoot = os.Getenv("GOPHERCLUB_APP_ROOT")
@@ -46,7 +46,7 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/", handlers.HomeHandler)
+	r.Handle("/", middleware.GatedContentHandler(handlers.FeedHandler(&env))).Methods("GET")
 	r.Handle("/signup", handlers.SignUpHandler(&env)).Methods("GET", "POST")
 
 	r.Handle("/login", handlers.LoginHandler(&env)).Methods("GET", "POST")
